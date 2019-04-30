@@ -54,6 +54,8 @@ const firstCheapCandy = candies.find(candy => candy.price < 2.00)
 
 // -------------------------------------------------------------------------
 
+// Lightning Exercise 1: Use the reduce method on the following array to determine how much total rain fell last month.
+
 const monthlyRainfall = [23, 13, 27, 20, 20, 31, 33, 26, 19, 12, 14, 12, 10]
 
 const totalRainfall = monthlyRainfall.reduce((currentTotal, nextValue) => {
@@ -63,6 +65,8 @@ const totalRainfall = monthlyRainfall.reduce((currentTotal, nextValue) => {
 console.log("Rainfall", totalRainfall);
 
 // ---------------------------------------------------------------------------
+
+// Lightning Exercise 2: Use the reduce method on the following array to build a sentence.
 
 const words = ["The", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog"]
 
@@ -75,6 +79,8 @@ console.log("concatenated: ", sentence);
 
 // -----------------------------------------------------------------------------
 
+// Practice: Big Spenders
+
 // Array to contain all the big spenders
 const bigSpenders = businesses.filter(business => {
   const isLarger = business.orders.find(order => order >= 9000)
@@ -86,15 +92,14 @@ const bigSpenders = businesses.filter(business => {
 console.log("Big spenders: ", bigSpenders);
 
 // ----------------------------------------------------------------------------
-
-const planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"]
-const planetDiv = document.querySelector("#planets");
-
 /*
 Use the forEach method to add the name of each planet
 to a section element in your HTML with an id of "planets".
 Use string templates to construct the DOM elements.
 */
+
+const planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"]
+const planetDiv = document.querySelector("#planets");
 
 // planets.forEach(planet => {
 //   planetDiv.innerHTML += `<h3>${planet}</h3>`
@@ -124,6 +129,12 @@ const ePlanets = planets.filter(planet => planet.includes("e"));
 console.log("planets with an e", ePlanets);
 
 // -------------------------------------------------------------------------------------------------------
+
+// Using one single line of JavaScript code, complete the following tasks on the array of integers below.
+  // 1. Sort the numbers in descending order (10, 9, 8, 7, etc).
+  // 2. Remove any integers greater than 19.
+  // 3. Multiply each remaining number by 1.5 and then subtract 1.
+  // 4. Then output (either in the DOM or the console) the sum of all the resulting numbers.
 
 const integers = [13, 25, 6, 3, 11, 2, 18, 7, 21, 1, 29, 20, 12, 8];
 
