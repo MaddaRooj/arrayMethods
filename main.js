@@ -60,8 +60,7 @@ const totalRainfall = monthlyRainfall.reduce((currentTotal, nextValue) => {
   // console.log("current Total", currentTotal, "nextValue", nextValue);
   return currentTotal += nextValue;
 });
-
-// console.log("Rainfall", totalRainfall)
+console.log("Rainfall", totalRainfall);
 
 // ---------------------------------------------------------------------------
 
@@ -72,7 +71,7 @@ const sentence = words.reduce((currentString, nextWord) => {
   return currentString += ` ${nextWord}`;
 });
 output.innerHTML += `<h3>${sentence}</h3>`;
-// console.log(sentence);
+console.log("concatenated: ", sentence);
 
 // -----------------------------------------------------------------------------
 
@@ -84,21 +83,28 @@ const bigSpenders = businesses.filter(business => {
     return isLarger;
   }
 });
-console.log(bigSpenders);
+console.log("Big spenders: ", bigSpenders);
 
 // ----------------------------------------------------------------------------
 
 const planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"]
 const planetDiv = document.querySelector("#planets");
 
+/*
+Use the forEach method to add the name of each planet
+to a section element in your HTML with an id of "planets".
+Use string templates to construct the DOM elements.
+*/
+
 // planets.forEach(planet => {
 //   planetDiv.innerHTML += `<h3>${planet}</h3>`
 // });
 
 /*
-    Use the forEach method to add the name of each planet
-    to a section element in your HTML with an id of "planets".
-    Use string templates to construct the DOM elements.
+Use the map method to create a new array where the
+first letter of each planet is capitalized. Use the
+`toUpperCase()` method on strings.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
 */
 
 planets.map(planet => {
@@ -108,36 +114,22 @@ planets.map(planet => {
 });
 
 /*
-    Use the map method to create a new array where the
-    first letter of each planet is capitalized. Use the
-    `toUpperCase()` method on strings.
-
-    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+Use the filter method to create a new array that
+contains planets with the letter 'e'. Use the `includes()`
+method on strings.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
 */
 
 const ePlanets = planets.filter(planet => planet.includes("e"));
 console.log("planets with an e", ePlanets);
 
-
-/*
-    Use the filter method to create a new array that
-    contains planets with the letter 'e'. Use the `includes()`
-    method on strings.
-
-    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
-*/
-
 // -------------------------------------------------------------------------------------------------------
 
 const integers = [13, 25, 6, 3, 11, 2, 18, 7, 21, 1, 29, 20, 12, 8];
 
-function mult(num){
-  return ((num * 1.5) - 1);
-};
-
 const sorted = integers.sort((a, b) => {return a-b})
   .filter(integer => integer <= 19)
-    .map(int => mult(int))
+    .map(int => ((int * 1.5) - 1))
       .reduce((current, next)=> current += next);
       
 console.log("sorted, adjusted and summed: ", sorted);
