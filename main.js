@@ -114,8 +114,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 planets.map(planet => {
   let upperPlanet = planet.charAt(0).toUpperCase() + planet.slice(1);
-  console.log("slice: ", planet.slice(1));
-  console.log("uppercase: ", upperPlanet);
+  // console.log("slice: ", planet.slice(1));
+  // console.log("uppercase: ", upperPlanet);
   planetDiv.innerHTML += `<h3>${upperPlanet}</h3>`
 });
 
@@ -148,7 +148,19 @@ console.log("sorted, adjusted and summed: ", sorted);
 
 // -------------------------------------------------------------------------------------------------------
 
-console.log("database", salesDatabase);
+// console.log("database", salesDatabase);
 
+// -------------------------------------------------------------------------------------------------------
 
+// You have been tasked with building a list of email addresses of all of our customer's contacts so we can spam them with an email about Miffles the Vampire Weiner Dog.
+
+// In your JavaScript file, paste the customers array that contains the emails we need to retrieve.
+// From that array, extract just the customers' contact email addresses and store them in a new array. You will need a nested array method - meaning one iteration inside another one - since you need to iterate the entire array of customers, and then iterate the array of emails for each one.
+
+console.log("customers: ", customers);
+
+const allEmails = customers.map(customer => customer.contacts.email)
+  .map((current, next) => current.concat(next));
+
+console.log("allEmails: ", allEmails);
 
