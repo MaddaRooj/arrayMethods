@@ -114,6 +114,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 planets.map(planet => {
   let upperPlanet = planet.charAt(0).toUpperCase() + planet.slice(1);
+  console.log("slice: ", planet.slice(1));
   console.log("uppercase: ", upperPlanet);
   planetDiv.innerHTML += `<h3>${upperPlanet}</h3>`
 });
